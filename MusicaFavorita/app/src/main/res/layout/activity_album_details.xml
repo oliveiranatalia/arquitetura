@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".albumDetail.AlbumDetailsActivity">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/ivAlbumDetail"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/tam_250"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/album_um"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tvNomeAlbum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/tam_30"
+                    android:text="@string/song_title"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivAlbumDetail" />
+
+                <TextView
+                    android:id="@+id/tvDescAlbum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/tam_30"
+                    android:layout_marginTop="@dimen/tam_30"
+                    android:text="@string/song_title"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_12"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvNomeAlbum" />
+
+                <TextView
+                    android:id="@+id/tvInfoAlbum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/tam_30"
+                    android:layout_marginTop="@dimen/tam_50"
+                    android:layout_marginBottom="@dimen/tam_20"
+                    android:layout_marginEnd="@dimen/tam_60"
+                    android:text="@string/song"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDescAlbum"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+                <ImageView
+                    android:id="@+id/ivIcone"
+                    android:layout_width="@dimen/tam_30"
+                    android:layout_height="@dimen/tam_30"
+                    android:src="@drawable/ic_favoritar"
+                    android:layout_marginEnd="@dimen/tam_30"
+                    android:layout_marginBottom="@dimen/tam_30"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:ignore="ContentDescription" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

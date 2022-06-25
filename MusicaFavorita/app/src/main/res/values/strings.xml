@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Banda Favorita</string>
+    <string name="details">Detalhes da banda</string>
+    <string name="img_desc">Os quatro integrantes, dois mais baixos na frente, dois mais altos atrás, sorrindo </string>
+    <string name="song_title">Here Comes the Sun</string>
+    <string name="song">Little darling\nI feel that ice is slowly melting\nLittle darling\nIt seems like years since it\'s been clear</string>
+    <string name="button">ver detalhes</string>
+    <string name="beatles">Beatles</string>
+    <string name="band_desc">Os Beatles foram uma banda de rock britânica formada em Liverpool, em 1960, e é hoje o grupo musical mais bem-sucedido e aclamado da história da música pop. O grupo era formado por John Lennon, Paul McCartney, George Harrison e Ringo Starr. Enraizada no skiffle e no rock \'n\' roll da década de 1950, a banda passou por diversos gêneros, desde o folk rock até o rock psicodélico, e muitas vezes incorporou elementos da música clássica em formas inovadoras e criativas. A sua influência se estendeu até as revoluções sociais e culturais dos anos 1960.</string>
+    <string name="img_details">Imagem do rosto dos quatro integrantes que estão deitado sobre um fundo amarelo</string>
+    <string name="this_is">this is</string>
+    <string name="title_activity_info">InfoActivity</string>
+</resources>
