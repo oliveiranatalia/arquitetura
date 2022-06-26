@@ -14,11 +14,11 @@
             android:name=".albumDetails.view.AlbumDetailsActivity"
             android:exported="false" />
         <activity
-            android:name="br.com.zup.musicafavorita.swipeViews.InfoActivity"
+            android:name="br.com.zup.musicafavorita.swipeViews.view.InfoActivity"
             android:exported="false"
             android:label="@string/title_activity_info" />
         <activity
-            android:name="br.com.zup.musicafavorita.launcher.view.BandActivity"
+            android:name="br.com.zup.musicafavorita.home.view.BandActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
