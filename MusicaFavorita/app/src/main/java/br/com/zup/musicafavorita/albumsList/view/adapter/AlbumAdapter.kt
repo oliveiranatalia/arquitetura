@@ -11,7 +11,7 @@ class AlbumAdapter(private var albumsList:MutableList<Album>, private var click:
 
     class ViewHolder(val binding: AlbumItemBinding):RecyclerView.ViewHolder(binding.root){
         fun showList(album:Album){
-            binding.ivItem.setImageResource(album.getImage())
+            binding.ivItem.setImageResource(album.image)
         }
     }
 
