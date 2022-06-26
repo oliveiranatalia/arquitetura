@@ -1,4 +1,4 @@
-package br.com.zup.musicafavorita.albumDetail
+package br.com.zup.musicafavorita.albumDetails.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package br.com.zup.musicafavorita.albums
+package br.com.zup.musicafavorita.albumsList.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,10 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import br.com.zup.musicafavorita.*
-import br.com.zup.musicafavorita.albumDetail.AlbumDetailsActivity
 import br.com.zup.musicafavorita.databinding.FragmentAlbumsBinding
-import br.com.zup.musicafavorita.albums.adapter.AlbumAdapter
 import br.com.zup.musicafavorita.model.Album
+import br.com.zup.musicafavorita.albumDetails.view.AlbumDetailsActivity
+import br.com.zup.musicafavorita.albumsList.view.adapter.AlbumAdapter
 
 class AlbumsFragment : Fragment() {
     private lateinit var binding: FragmentAlbumsBinding
