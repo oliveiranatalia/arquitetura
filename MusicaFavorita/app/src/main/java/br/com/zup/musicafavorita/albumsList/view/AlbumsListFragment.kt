@@ -8,20 +8,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import br.com.zup.musicafavorita.*
-import br.com.zup.musicafavorita.databinding.FragmentAlbumsBinding
 import br.com.zup.musicafavorita.model.Album
 import br.com.zup.musicafavorita.albumDetails.view.AlbumDetailsActivity
 import br.com.zup.musicafavorita.albumsList.view.adapter.AlbumAdapter
+import br.com.zup.musicafavorita.databinding.FragmentAlbumslistBinding
 
-class AlbumsFragment : Fragment() {
-    private lateinit var binding: FragmentAlbumsBinding
+class AlbumsListFragment : Fragment() {
+    private lateinit var binding: FragmentAlbumslistBinding
     private val albumAdapter: AlbumAdapter by lazy { AlbumAdapter(arrayListOf(), this::getDetails) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentAlbumsBinding.inflate(inflater, container,false)
+        binding = FragmentAlbumslistBinding.inflate(inflater, container,false)
         return binding.root
     }
 

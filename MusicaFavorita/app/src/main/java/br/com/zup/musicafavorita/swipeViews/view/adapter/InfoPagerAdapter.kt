@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import br.com.zup.musicafavorita.albumsList.view.AlbumsFragment
+import br.com.zup.musicafavorita.albumsList.view.AlbumsListFragment
 import br.com.zup.musicafavorita.bandInformations.view.InfoFragment
 
 class InfoPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle, private var options:List<String>
@@ -15,7 +15,7 @@ class InfoPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle, p
     override fun createFragment(position: Int): Fragment {
         when(position){
             0 -> return InfoFragment()
-            1 -> return AlbumsFragment()
+            1 -> return AlbumsListFragment()
         }
         return InfoFragment()
     }
