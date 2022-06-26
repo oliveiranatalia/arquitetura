@@ -1,11 +1,11 @@
-package br.com.zup.musicafavorita.swipeViews
+package br.com.zup.musicafavorita.swipeViews.view
 
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import br.com.zup.musicafavorita.R
 import br.com.zup.musicafavorita.databinding.ActivityInfoBinding
-import br.com.zup.musicafavorita.swipeViews.adapter.InfoPagerAdapter
+import br.com.zup.musicafavorita.swipeViews.view.adapter.InfoPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 
 class InfoActivity : AppCompatActivity() {

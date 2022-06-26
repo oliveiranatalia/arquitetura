@@ -30,20 +30,7 @@ class AlbumsFragment : Fragment() {
         getAlbumList()
     }
     private fun getAlbumList(){
-        val albumList = mutableListOf<Album>()
-        albumList.add(Album(R.drawable.album_um, ALBUM1, DESC1, INFO1))
-        albumList.add(Album(R.drawable.algum_dois, ALBUM2, DESC2, INFO2))
-        albumList.add(Album(R.drawable.album_tres, ALBUM3, DESC3, INFO3))
-        albumList.add(Album(R.drawable.album_quatro,ALBUM4,DESC4, INFO4))
-        albumList.add(Album(R.drawable.album_cinco, ALBUM5, DESC5, INFO5))
-        albumList.add(Album(R.drawable.album_seis,ALBUM6, DESC6, INFO6))
-        albumList.add(Album(R.drawable.album_sete, ALBUM7, DESC7, INFO7))
-        albumList.add(Album(R.drawable.album_oito,ALBUM8,DESC8,INFO8))
-        albumList.add(Album(R.drawable.album_nove,ALBUM9,DESC9,INFO9))
-        albumList.add(Album(R.drawable.album_dez,ALBUM10,DESC10,INFO10))
-        albumList.add(Album(R.drawable.album_onze,ALBUM11,DESC11,INFO11))
-        albumList.add(Album(R.drawable.album_doze,ALBUM12,DESC12,INFO12))
-        albumList.add(Album(R.drawable.album_treze,ALBUM13,DESC13,INFO13))
+
         albumAdapter.update(albumList)
         showRecyclerView()
     }

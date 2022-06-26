@@ -1,4 +1,4 @@
-package br.com.zup.musicafavorita.swipeViews.adapter
+package br.com.zup.musicafavorita.swipeViews.view.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
