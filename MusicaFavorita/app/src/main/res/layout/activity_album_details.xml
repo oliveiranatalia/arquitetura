@@ -10,7 +10,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
                 <ImageView
-                    android:id="@+id/ivAlbumDetail"
+                    android:id="@+id/ivAlbumImage"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/tam_250"
                     android:scaleType="centerCrop"
@@ -21,7 +21,7 @@
                     tools:ignore="ContentDescription" />
 
                 <TextView
-                    android:id="@+id/tvNomeAlbum"
+                    android:id="@+id/tvAlbumTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/tam_30"
@@ -31,10 +31,10 @@
                     android:textSize="@dimen/text_16"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/ivAlbumDetail" />
+                    app:layout_constraintTop_toBottomOf="@id/ivAlbumImage" />
 
                 <TextView
-                    android:id="@+id/tvDescAlbum"
+                    android:id="@+id/tvAlbumDescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/tam_30"
@@ -45,10 +45,10 @@
                     android:textSize="@dimen/text_12"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvNomeAlbum" />
+                    app:layout_constraintTop_toBottomOf="@id/tvAlbumTitle" />
 
                 <TextView
-                    android:id="@+id/tvInfoAlbum"
+                    android:id="@+id/tvAlbumInformations"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/tam_30"
@@ -59,17 +59,17 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_12"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvDescAlbum"
+                    app:layout_constraintTop_toBottomOf="@id/tvAlbumDescription"
                     app:layout_constraintBottom_toBottomOf="parent"/>
                 <ImageView
-                    android:id="@+id/ivIcone"
+                    android:id="@+id/ivIcon"
                     android:layout_width="@dimen/tam_30"
                     android:layout_height="@dimen/tam_30"
                     android:src="@drawable/ic_favoritar"
+                    android:contentDescription="@string/icon_desc"
                     android:layout_marginEnd="@dimen/tam_30"
                     android:layout_marginBottom="@dimen/tam_30"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    tools:ignore="ContentDescription" />
+                    app:layout_constraintBottom_toBottomOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

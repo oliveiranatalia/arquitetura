@@ -14,7 +14,7 @@ class BandActivity : AppCompatActivity() {
         binding = ActivityBandBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.buttonHome.setOnClickListener{
+        binding.buttonVerDetalhes.setOnClickListener{
             startActivity(Intent(this, InfoActivity::class.java))
         }
     }

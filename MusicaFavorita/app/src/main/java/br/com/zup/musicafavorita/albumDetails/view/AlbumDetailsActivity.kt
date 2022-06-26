@@ -19,7 +19,7 @@ class AlbumDetailsActivity : AppCompatActivity() {
     //getAlbum()
         appBar()
 
-        binding.ivIcone.setOnClickListener{
+        binding.ivIcon.setOnClickListener{
             Toast.makeText(this, FAV, Toast.LENGTH_LONG).show()
         }
     }
@@ -29,12 +29,12 @@ class AlbumDetailsActivity : AppCompatActivity() {
     }
     //private fun getAlbum(){
     //    //val album = intent.getExtra<Album>(ALBUM_KEY)
-    //    if(album != null) {
-    //        binding.ivAlbumDetail.setImageResource(album.getImage())
-    //        binding.tvNomeAlbum.text = album.getName()
-    //        binding.tvDescAlbum.text = album.getDesc()
-    //        binding.tvInfoAlbum.text = album.getInfo()
-    //    }
+    //    if(al//bum != null) {
+    //        binding.ivAlbumImage.setImageResource(album.getImage())
+    //        binding.tvAlbumTitle.text = album.getName()
+    //        binding.tvAlbumDescription.text = album.getDesc()
+    //        binding.tvAlbumInformations.text = album.getInfo()
+    //   }
     //}
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {

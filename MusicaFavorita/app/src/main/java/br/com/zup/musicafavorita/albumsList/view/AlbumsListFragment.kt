@@ -38,8 +38,8 @@ class AlbumsListFragment : Fragment() {
         showRecyclerView()
     }
     private fun showRecyclerView(){
-        binding.rvListaAlbum.adapter = albumAdapter
-        binding.rvListaAlbum.layoutManager = GridLayoutManager(context,2)
+        binding.rvAlbumList.adapter = albumAdapter
+        binding.rvAlbumList.layoutManager = GridLayoutManager(context,2)
     }
     private fun getDetails(album:Album){
         //startActivity(Intent(context, AlbumDetailsActivity::class.java).putExtra(ALBUM_KEY,album))
