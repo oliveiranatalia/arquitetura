@@ -30,12 +30,4 @@ class AlbumAdapter(private var albumsList:MutableList<Album>, private var click:
 
     override fun getItemCount() = albumsList.size
 
-    fun update(newList:MutableList<Album>){
-        if(newList.size == 0 || albumsList == newList){
-            albumsList = newList
-        }else{
-            albumsList.addAll(newList)
-        }
-        notifyDataSetChanged()
-    }
 }

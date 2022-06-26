@@ -39,6 +39,6 @@ const val INFO12 = "Artista: Beatles\nLançamento: 1969\nGravadora: Apple\nEstú
 const val ALBUM13 = "Let It Be"
 const val DESC13 = "Let It Be é o décimo terceiro e último álbum de estúdio lançado pelo grupo inglês de rock The Beatles. Gravado entre janeiro de 1969 e março/abril de 1970, o álbum foi somente lançado em 8 de maio de 1970, após o disco Abbey Road (último disco gravado) e juntamente com o documentário com o mesmo nome. Inicialmente estava previsto chamar-se Get Back. As músicas \"Let It Be\" e \"Get Back\" foram lançadas como singles no Reino Unido, mas em versões diferentes das encontradas no álbum. \"The Long and Winding Road\" foi lançada como single nos EUA."
 const val INFO13 = "Artista: Beatles\nLançamento: 1969\nGravadora: Apple, EMI\nEstúdio: Abbey Road Studios, EMI, Apple Studio\nFormato: LP, CD\nGêneros: Rock, Blues Rock"
-const val KEY = "album"
+const val ALBUM_KEY = "album"
 const val FAV = "Álbum favoritado com sucesso"
 

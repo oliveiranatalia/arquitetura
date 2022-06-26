@@ -20,6 +20,7 @@ class AlbumListRepository {
         albumList.add(Album(R.drawable.album_onze, ALBUM11, DESC11, INFO11))
         albumList.add(Album(R.drawable.album_doze, ALBUM12, DESC12, INFO12))
         albumList.add(Album(R.drawable.album_treze, ALBUM13, DESC13, INFO13))
+
         return albumList
     }
 }

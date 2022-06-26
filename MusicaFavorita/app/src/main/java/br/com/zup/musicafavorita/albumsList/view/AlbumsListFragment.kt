@@ -6,16 +6,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import br.com.zup.musicafavorita.*
 import br.com.zup.musicafavorita.model.Album
 import br.com.zup.musicafavorita.albumDetails.view.AlbumDetailsActivity
 import br.com.zup.musicafavorita.albumsList.view.adapter.AlbumAdapter
+import br.com.zup.musicafavorita.albumsList.viewmodel.AlbumsListViewModel
 import br.com.zup.musicafavorita.databinding.FragmentAlbumslistBinding
 
 class AlbumsListFragment : Fragment() {
     private lateinit var binding: FragmentAlbumslistBinding
     private val albumAdapter: AlbumAdapter by lazy { AlbumAdapter(arrayListOf(), this::getDetails) }
+    private val viewModel: AlbumsListViewModel by lazy {
+        ViewModelProvider(this)[AlbumsListViewModel::class.java]}
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,8 +34,7 @@ class AlbumsListFragment : Fragment() {
         getAlbumList()
     }
     private fun getAlbumList(){
-
-        albumAdapter.update(albumList)
+        viewModel.getAlbumsList()
         showRecyclerView()
     }
     private fun showRecyclerView(){
@@ -39,6 +42,6 @@ class AlbumsListFragment : Fragment() {
         binding.rvListaAlbum.layoutManager = GridLayoutManager(context,2)
     }
     private fun getDetails(album:Album){
-        startActivity(Intent(context, AlbumDetailsActivity::class.java).putExtra(KEY,album))
+        startActivity(Intent(context, AlbumDetailsActivity::class.java).putExtra(ALBUM_KEY,album))
     }
 }
