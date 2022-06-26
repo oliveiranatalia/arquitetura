@@ -1,6 +1,5 @@
 package br.com.zup.musicafavorita.albumsList.view
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,9 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import br.com.zup.musicafavorita.*
 import br.com.zup.musicafavorita.model.Album
-import br.com.zup.musicafavorita.albumDetails.view.AlbumDetailsActivity
 import br.com.zup.musicafavorita.albumsList.view.adapter.AlbumAdapter
 import br.com.zup.musicafavorita.albumsList.viewmodel.AlbumsListViewModel
 import br.com.zup.musicafavorita.databinding.FragmentAlbumslistBinding
@@ -42,6 +39,7 @@ class AlbumsListFragment : Fragment() {
         binding.rvListaAlbum.layoutManager = GridLayoutManager(context,2)
     }
     private fun getDetails(album:Album){
-        startActivity(Intent(context, AlbumDetailsActivity::class.java).putExtra(ALBUM_KEY,album))
+        TODO()
+    // startActivity(Intent(context, AlbumDetailsActivity::class.java).putExtra(ALBUM_KEY,album))
     }
 }
