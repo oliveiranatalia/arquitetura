@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.zup.musicafavorita.databinding.AlbumItemBinding
 import br.com.zup.musicafavorita.model.Album
 
-class AlbumAdapter(private var albumsList:MutableList<Album>, private var click: (album:Album) -> Unit
+class AlbumAdapter(var albumsList:MutableList<Album>, private var click: (album:Album) -> Unit
 ):RecyclerView.Adapter<AlbumAdapter.ViewHolder>() {
 
     class ViewHolder(val binding: AlbumItemBinding):RecyclerView.ViewHolder(binding.root){

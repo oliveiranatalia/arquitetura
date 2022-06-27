@@ -18,8 +18,7 @@ import br.com.zup.musicafavorita.databinding.FragmentAlbumslistBinding
 class AlbumsListFragment : Fragment() {
     private lateinit var binding: FragmentAlbumslistBinding
     private val albumAdapter: AlbumAdapter by lazy { AlbumAdapter(arrayListOf(), this::getDetails) }
-    private val viewModel: AlbumsListViewModel by lazy {
-        ViewModelProvider(this)[AlbumsListViewModel::class.java]}
+    private val viewModel: AlbumsListViewModel by lazy { ViewModelProvider(this)[AlbumsListViewModel::class.java]}
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,6 +34,9 @@ class AlbumsListFragment : Fragment() {
     }
     private fun getAlbumList(){
         viewModel.getAlbumsList()
+        viewModel.response.observe(this.viewLifecycleOwner){
+            albumAdapter.albumsList.addAll(it)
+        }
         showRecyclerView()
     }
     private fun showRecyclerView(){
@@ -42,6 +44,7 @@ class AlbumsListFragment : Fragment() {
         binding.rvAlbumList.layoutManager = GridLayoutManager(context,2)
     }
     private fun getDetails(album:Album){
-        //startActivity(Intent(context, AlbumDetailsActivity::class.java).putExtra(ALBUM_KEY,album))
+        val intent = Intent(this.context, AlbumDetailsActivity::class.java).apply{putExtra(ALBUM_KEY, album)}
+        startActivity(intent)
     }
 }
