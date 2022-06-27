@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
+import br.com.zup.musicafavorita.ALBUM_KEY
 import br.com.zup.musicafavorita.FAV
 import br.com.zup.musicafavorita.R
 import br.com.zup.musicafavorita.databinding.ActivityAlbumDetailsBinding
+import br.com.zup.musicafavorita.model.Album
 
 class AlbumDetailsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAlbumDetailsBinding
@@ -16,7 +18,7 @@ class AlbumDetailsActivity : AppCompatActivity() {
         binding = ActivityAlbumDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-    //getAlbum()
+        getAlbum()
         appBar()
 
         binding.ivIcon.setOnClickListener{
@@ -27,15 +29,15 @@ class AlbumDetailsActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setTitle(R.string.app_name)
     }
-    //private fun getAlbum(){
-    //    //val album = intent.getExtra<Album>(ALBUM_KEY)
-    //    if(al//bum != null) {
-    //        binding.ivAlbumImage.setImageResource(album.getImage())
-    //        binding.tvAlbumTitle.text = album.getName()
-    //        binding.tvAlbumDescription.text = album.getDesc()
-    //        binding.tvAlbumInformations.text = album.getInfo()
-    //   }
-    //}
+    private fun getAlbum(){
+        val album = intent.getParcelableExtra<Album>(ALBUM_KEY)
+        if(album != null) {
+            binding.ivAlbumImage.setImageResource(album.image)
+            binding.tvAlbumTitle.text = album.title
+            binding.tvAlbumDescription.text = album.description
+            binding.tvAlbumInformations.text = album.informations
+       }
+    }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
             this.finish()

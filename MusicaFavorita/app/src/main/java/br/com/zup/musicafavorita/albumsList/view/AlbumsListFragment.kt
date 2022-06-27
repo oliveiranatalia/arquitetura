@@ -44,7 +44,9 @@ class AlbumsListFragment : Fragment() {
         binding.rvAlbumList.layoutManager = GridLayoutManager(context,2)
     }
     private fun getDetails(album:Album){
-        val intent = Intent(this.context, AlbumDetailsActivity::class.java).apply{putExtra(ALBUM_KEY, album)}
+        val intent = Intent(this.context, AlbumDetailsActivity::class.java).apply{
+            putExtra(ALBUM_KEY, album)
+        }
         startActivity(intent)
     }
 }
