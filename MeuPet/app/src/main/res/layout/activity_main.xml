@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_pet"
+        android:textSize="@dimen/text_16"
+        android:textAllCaps="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/tam_20"/>
+    <ImageView
+        android:layout_width="@dimen/tam_200"
+        android:layout_height="@dimen/tam_200"
+        android:src="@drawable/miguel_mochileiro"
+        android:contentDescription="@string/pet_description"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/tam_20"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/tam_36"
+        android:layout_marginTop="@dimen/tam_20"
+        android:text="@string/info_pet"
+        android:textSize="@dimen/text_12" />
+
+    <Button
+        android:id="@+id/botao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mensagem_botao"
+        android:layout_marginTop="@dimen/tam_20"
+        android:layout_margin="@dimen/tam_36"
+        android:backgroundTint="@color/cor_secundaria"
+        android:textSize="@dimen/text_14"
+        android:textAllCaps="true"/>
+
+</LinearLayout>
