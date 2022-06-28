@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".home.HomeActivity">
-
+    tools:context=".home.view.BandActivity">
 
     <TextView
         android:id="@+id/tvThisIs"
@@ -23,7 +22,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
     <TextView
-        android:id="@+id/tvNomeBanda"
+        android:id="@+id/tvBandTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/beatles"
@@ -36,7 +35,7 @@
         app:layout_constraintTop_toBottomOf="@id/tvThisIs"
         android:textColor="@color/black"/>
     <ImageView
-        android:id="@+id/ivImagem"
+        android:id="@+id/ivBandImage"
         android:layout_width="match_parent"
         android:layout_height="@dimen/tam_250"
         android:src="@drawable/beatles"
@@ -45,9 +44,9 @@
         android:layout_marginTop="@dimen/tam_16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvNomeBanda"/>
+        app:layout_constraintTop_toBottomOf="@id/tvBandTitle"/>
     <TextView
-        android:id="@+id/tvTituloMusica"
+        android:id="@+id/tvSongTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/song_title"
@@ -57,9 +56,9 @@
         android:layout_marginTop="@dimen/text_16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivImagem"/>
+        app:layout_constraintTop_toBottomOf="@id/ivBandImage"/>
     <TextView
-        android:id="@+id/tvTrechoMusica"
+        android:id="@+id/tvSongLyric"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/song"
@@ -69,10 +68,10 @@
         android:layout_marginTop="@dimen/text_12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTituloMusica"/>
+        app:layout_constraintTop_toBottomOf="@id/tvSongTitle"/>
 
     <Button
-        android:id="@+id/buttonHome"
+        android:id="@+id/buttonVerDetalhes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/tam_30"
@@ -80,7 +79,6 @@
         android:text="@string/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTrechoMusica"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintTop_toBottomOf="@id/tvSongLyric" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

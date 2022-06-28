@@ -1,4 +1,4 @@
-package br.com.zup.musicafavorita.albums.adapter
+package br.com.zup.musicafavorita.albumsList.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,12 +6,12 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.zup.musicafavorita.databinding.AlbumItemBinding
 import br.com.zup.musicafavorita.model.Album
 
-class AlbumAdapter(private var albumsList:MutableList<Album>, private var click: (album:Album) -> Unit
+class AlbumAdapter(var albumsList:MutableList<Album>, private var click: (album:Album) -> Unit
 ):RecyclerView.Adapter<AlbumAdapter.ViewHolder>() {
 
     class ViewHolder(val binding: AlbumItemBinding):RecyclerView.ViewHolder(binding.root){
         fun showList(album:Album){
-            binding.ivItem.setImageResource(album.getImage())
+            binding.ivItem.setImageResource(album.image)
         }
     }
 
@@ -30,12 +30,4 @@ class AlbumAdapter(private var albumsList:MutableList<Album>, private var click:
 
     override fun getItemCount() = albumsList.size
 
-    fun update(newList:MutableList<Album>){
-        if(newList.size == 0 || albumsList == newList){
-            albumsList = newList
-        }else{
-            albumsList.addAll(newList)
-        }
-        notifyDataSetChanged()
-    }
 }
