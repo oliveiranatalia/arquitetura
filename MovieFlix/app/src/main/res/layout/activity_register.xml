@@ -10,14 +10,15 @@
         android:id="@+id/etUserNameRegister"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="96dp"
+        android:layout_marginEnd="@dimen/margin_16"
         android:hint="@string/prompt_name"
         android:inputType="text"
-        android:layout_marginEnd="@dimen/margin_16"
-        android:layout_marginStart="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/etEmailRegister"
@@ -27,7 +28,8 @@
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="@+id/etUserNameRegister"
         app:layout_constraintStart_toStartOf="@+id/etUserNameRegister"
-        app:layout_constraintTop_toBottomOf="@+id/etUserNameRegister" />
+        app:layout_constraintTop_toBottomOf="@+id/etUserNameRegister"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/etPasswordRegister"
@@ -37,7 +39,8 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="@+id/etEmailRegister"
         app:layout_constraintStart_toStartOf="@+id/etEmailRegister"
-        app:layout_constraintTop_toBottomOf="@+id/etEmailRegister" />
+        app:layout_constraintTop_toBottomOf="@+id/etEmailRegister"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/etConfirmPasswordRegister"
@@ -47,7 +50,8 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="@+id/etPasswordRegister"
         app:layout_constraintStart_toStartOf="@+id/etPasswordRegister"
-        app:layout_constraintTop_toBottomOf="@+id/etPasswordRegister" />
+        app:layout_constraintTop_toBottomOf="@+id/etPasswordRegister"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/bvLogin"

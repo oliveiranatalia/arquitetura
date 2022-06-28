@@ -41,7 +41,7 @@ class LoginActivity : AppCompatActivity() {
         val password =  binding.etPassword.text.toString()
         val login = LoginModel(user,password)
 
-        viewModel.authentication(login)
+        viewModel.authentication(login,binding.swSaveData.isChecked)
 
     }
 
@@ -52,6 +52,13 @@ class LoginActivity : AppCompatActivity() {
             }else{
                 Toast.makeText(this, "Usuario ou senha invalidos", Toast.LENGTH_LONG).show()
             }
+        }
+        viewModel.savedData.observe(this){
+            binding.etUsername.setText(it.user)
+            binding.etPassword.setText(it.password)
+        }
+        viewModel.savedDataFlag.observe(this){
+            binding.swSaveData.isChecked = it
         }
     }
 }
