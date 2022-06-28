@@ -35,7 +35,6 @@ class LoginActivity : AppCompatActivity() {
         binding.bvLogin.setOnClickListener {
             authenticate()
         }
-
     }
 
     fun authenticate(){

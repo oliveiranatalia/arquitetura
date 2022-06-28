@@ -22,7 +22,7 @@ class RegisterActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel.getDataSaved()
+        registration()
         observers()
 
         binding.bvLogin.setOnClickListener{
@@ -44,8 +44,10 @@ class RegisterActivity : AppCompatActivity() {
                 binding.etConfirmPasswordRegister.error = REQUIRED
             }else ->
             if(confirm == password){
+
                 val register = RegisterModel(userName, email, password)
-                viewModel.registration(register)
+                viewModel.validate(register)
+
                 startActivity(Intent(this, LoginActivity::class.java))
             }else{
                 binding.etConfirmPasswordRegister.error = DMATCH

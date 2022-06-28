@@ -14,6 +14,7 @@ import br.com.zup.movieflix.login.model.LoginModel
 import br.com.zup.movieflix.login.repository.LoginRepository
 
 class LoginViewModel(application: Application) : AndroidViewModel(application) {
+
     private val repository = LoginRepository()
 
     private var _response: MutableLiveData<LoginModel> = MutableLiveData()
@@ -40,7 +41,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
                 prefEditor.remove(USER_PASSWORD_LOGIN_KEY)
                 prefEditor.apply()
             }
-            _response.value = repository.authenticate(login)
+            _response.value = repository.authenticate(login, getApplication())
         }catch (e: Exception){
             Log.e("Error", "------> ${e.message}")
         }
@@ -48,10 +49,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
 
     fun getDataSaved(){
         try {
-            val user = pref.getString(USER_NAME_LOGIN_KEY, "").toString()
-            val password = pref.getString(USER_PASSWORD_LOGIN_KEY, "").toString()
-            val savedUser = LoginModel(user, password)
-            _savedData.value = savedUser
+            _savedData.value = repository.getDataSaved(getApplication())
             _savedDataFlag.value = pref.getBoolean(SAVE_USER_PASS_FLAG_KEY, false)
         }catch (e: Exception){
             Log.e("Error", "------> ${e.message}")
