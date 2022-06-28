@@ -27,20 +27,21 @@ class RegisterActivity : AppCompatActivity() {
         val password = binding.etPasswordRegister.text.toString()
         val user = RegisterModel(userName,email,password)
 
-        viewModel.authentication(user)
         validation(user)
     }
     private fun validation(user:RegisterModel?){
-        if(user != null){
-            binding.bvLogin.setOnClickListener{
-                Toast.makeText(this, RECORD,Toast.LENGTH_LONG).show()
-            clear()
-            }
-        }else{
+        user?.let { viewModel.authentication(it) }
+        if(user == null){
             binding.etUserNameRegister.error = REQUIRED
             binding.etEmailRegister.error = REQUIRED
             binding.etPasswordRegister.error = REQUIRED
             binding.etConfirmPasswordRegister.error = REQUIRED
+        }else{
+
+            binding.bvLogin.setOnClickListener {
+                Toast.makeText(this, RECORD, Toast.LENGTH_LONG).show()
+                clear()
+            }
         }
     }
     private fun clear(){
