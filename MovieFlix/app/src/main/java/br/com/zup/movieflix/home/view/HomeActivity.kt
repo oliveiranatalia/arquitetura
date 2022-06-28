@@ -3,7 +3,6 @@ package br.com.zup.movieflix.home.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
-import br.com.zup.movieflix.R
 import br.com.zup.movieflix.databinding.ActivityHomeBinding
 import br.com.zup.movieflix.home.viewmodel.HomeViewModel
 
