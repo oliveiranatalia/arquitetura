@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -18,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <EditText
         android:id="@+id/etEmailRegister"
@@ -37,10 +38,11 @@
         android:layout_height="wrap_content"
         android:hint="@string/prompt_password"
         android:inputType="textPassword"
+
         app:layout_constraintEnd_toEndOf="@+id/etEmailRegister"
         app:layout_constraintStart_toStartOf="@+id/etEmailRegister"
         app:layout_constraintTop_toBottomOf="@+id/etEmailRegister"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <EditText
         android:id="@+id/etConfirmPasswordRegister"
@@ -51,7 +53,7 @@
         app:layout_constraintEnd_toEndOf="@+id/etPasswordRegister"
         app:layout_constraintStart_toStartOf="@+id/etPasswordRegister"
         app:layout_constraintTop_toBottomOf="@+id/etPasswordRegister"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <Button
         android:id="@+id/bvLogin"
@@ -63,6 +65,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etConfirmPasswordRegister"
-        app:layout_constraintVertical_bias="0.1" />
-
+        app:layout_constraintVertical_bias="0.1"
+        tools:ignore="TextContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cvItemLista"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -14,6 +15,7 @@
             android:id="@+id/ivMoviePoster"
             android:layout_width="@dimen/width_50"
             android:layout_height="@dimen/height_50"
+            android:contentDescription="@string/poster_do_filme"
             android:scaleType="centerCrop"
             android:src="@drawable/a_era_gelo"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -22,7 +24,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
-            android:contentDescription="@string/poster_do_filme" />
+            tools:ignore="ImageContrastCheck" />
 
         <TextView
             android:id="@+id/tvMovieName"

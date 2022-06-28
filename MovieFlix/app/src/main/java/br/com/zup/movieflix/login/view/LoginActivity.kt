@@ -2,13 +2,13 @@ package br.com.zup.movieflix.login.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import br.com.zup.movieflix.ERROR
+import br.com.zup.movieflix.REQUIRED
 import br.com.zup.movieflix.databinding.ActivityLoginBinding
 import br.com.zup.movieflix.home.view.HomeActivity
-import br.com.zup.movieflix.home.viewmodel.HomeViewModel
 import br.com.zup.movieflix.login.model.LoginModel
 import br.com.zup.movieflix.login.viewmodel.LoginViewModel
 import br.com.zup.movieflix.register.view.RegisterActivity
@@ -29,6 +29,8 @@ class LoginActivity : AppCompatActivity() {
 
         binding.tvRegistro.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
+            binding.etUsername.text.clear()
+            binding.etPassword.text.clear()
         }
         binding.bvLogin.setOnClickListener {
             authenticate()
@@ -39,10 +41,16 @@ class LoginActivity : AppCompatActivity() {
     fun authenticate(){
         val user = binding.etUsername.text.toString()
         val password =  binding.etPassword.text.toString()
-        val login = LoginModel(user,password)
 
-        viewModel.authentication(login,binding.swSaveData.isChecked)
-
+        when{
+            user.isEmpty() && password.isEmpty() -> {
+                binding.etUsername.error = REQUIRED
+                binding.etPassword.error = REQUIRED
+            } else -> {
+            val login = LoginModel(user, password)
+            viewModel.authentication(login, binding.swSaveData.isChecked)
+            }
+        }
     }
 
     fun observers(){
@@ -50,7 +58,9 @@ class LoginActivity : AppCompatActivity() {
             if(it.accessAuth){
                 startActivity(Intent(this, HomeActivity::class.java))
             }else{
-                Toast.makeText(this, "Usuario ou senha invalidos", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, ERROR, Toast.LENGTH_LONG).show()
+                binding.etUsername.text.clear()
+                binding.etPassword.text.clear()
             }
         }
         viewModel.savedData.observe(this){

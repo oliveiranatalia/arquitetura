@@ -19,26 +19,22 @@ class RegisterViewModel (application: Application): AndroidViewModel(application
     private var _response: MutableLiveData<RegisterModel> = MutableLiveData()
     val response: LiveData<RegisterModel> = _response
 
-    private val _savedDataFlag: MutableLiveData<Boolean> = MutableLiveData()
-    val savedDataFlag: LiveData<Boolean> = _savedDataFlag
-
     private val _savedData: MutableLiveData<RegisterModel> = MutableLiveData()
     val savedData: LiveData<RegisterModel> = _savedData
 
-    fun registration(register: RegisterModel, flagSaveData:Boolean){
+    fun registration(register: RegisterModel){
         try{
-            prefEditor.putBoolean(SAVE_USER_PASS_FLAG_KEY, flagSaveData)
-            if(flagSaveData) {
+            //if(){
                 prefEditor.putString(USER_NAME_REGISTER_KEY, register.userName)
                 prefEditor.putString(USER_EMAIL_REGISTER_KEY, register.email)
                 prefEditor.putString(USER_PASSWORD_REGISTER_KEY, register.password)
                 prefEditor.apply()
-            }else{
+            //}else{
                 prefEditor.remove(USER_NAME_REGISTER_KEY)
                 prefEditor.remove(USER_EMAIL_REGISTER_KEY)
                 prefEditor.remove(USER_PASSWORD_REGISTER_KEY)
                 prefEditor.apply()
-            }
+            //}
             _response.value = repository.validate(register)
         }catch (e: Exception){
             Log.e("Error", "------> ${e.message}")
@@ -51,7 +47,6 @@ class RegisterViewModel (application: Application): AndroidViewModel(application
             val password = pref.getString(USER_PASSWORD_REGISTER_KEY,"").toString()
             val register = RegisterModel(name,email, password)
             _savedData.value = register
-            _savedDataFlag.value = pref.getBoolean(SAVE_USER_PASS_FLAG_KEY,false)
         }catch (e:Exception){
             Log.e("Error", "------> ${e.message}")
         }
