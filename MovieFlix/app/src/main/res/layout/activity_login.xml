@@ -56,8 +56,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRegistro"
+        app:layout_constraintTop_toBottomOf="@+id/switchLogin"
         app:layout_constraintVertical_bias="0.1" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/switch_save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvRegistro"/>
 
     <ProgressBar
         android:id="@+id/loading"
