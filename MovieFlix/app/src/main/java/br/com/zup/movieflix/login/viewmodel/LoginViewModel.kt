@@ -6,7 +6,6 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import br.com.zup.movieflix.PREFERENCE_KEY
 import br.com.zup.movieflix.USER_NAME_LOGIN_KEY
 import br.com.zup.movieflix.USER_PASSWORD_LOGIN_KEY

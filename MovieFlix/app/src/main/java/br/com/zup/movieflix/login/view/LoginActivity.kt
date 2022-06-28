@@ -53,6 +53,5 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this, "Usuario ou senha invalidos", Toast.LENGTH_LONG).show()
             }
         }
-
     }
 }
