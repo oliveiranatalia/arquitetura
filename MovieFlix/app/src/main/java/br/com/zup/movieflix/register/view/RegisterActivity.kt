@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import br.com.zup.movieflix.DMATCH
 import br.com.zup.movieflix.REQUIRED
 import br.com.zup.movieflix.databinding.ActivityRegisterBinding
+import br.com.zup.movieflix.home.view.HomeActivity
 import br.com.zup.movieflix.login.view.LoginActivity
 import br.com.zup.movieflix.register.model.RegisterModel
 import br.com.zup.movieflix.register.viewmodel.RegisterViewModel
@@ -47,7 +48,6 @@ class RegisterActivity : AppCompatActivity() {
 
                 val register = RegisterModel(userName, email, password)
                 viewModel.validate(register)
-
                 startActivity(Intent(this, LoginActivity::class.java))
             }else{
                 binding.etConfirmPasswordRegister.error = DMATCH

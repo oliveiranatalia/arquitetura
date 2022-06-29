@@ -7,12 +7,13 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import br.com.zup.meupet.NAME_KEY
-import br.com.zup.meupet.PREFERENCE_REGISTER_KEY
+import br.com.zup.meupet.PREFERENCE_KEY
 import br.com.zup.meupet.SAVE_NAME_FLAG_KEY
 import br.com.zup.meupet.home.model.MainModel
 import br.com.zup.meupet.home.repository.MainRepository
 
 class MainViewModel(application: Application): AndroidViewModel(application) {
+
     private val repository = MainRepository()
 
     private val _savedData: MutableLiveData<MainModel> = MutableLiveData()
@@ -24,7 +25,7 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
     private val _savedDataFlag: MutableLiveData<Boolean> = MutableLiveData()
     val savedDataFlag: LiveData<Boolean> = _savedDataFlag
 
-    val pref = application.getSharedPreferences(PREFERENCE_REGISTER_KEY, Context.MODE_PRIVATE)
+    val pref = application.getSharedPreferences(PREFERENCE_KEY, Context.MODE_PRIVATE)
     val prefEditor = pref.edit()
 
     fun authentication(pet: MainModel, flagSaveData: Boolean){

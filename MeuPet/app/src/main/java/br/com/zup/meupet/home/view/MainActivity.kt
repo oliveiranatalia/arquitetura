@@ -21,23 +21,30 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        viewModel.getDataSaved()
+        observers()
+
         binding.btSaveName.setOnClickListener{
             registration()
         }
-        viewModel.getDataSaved()
-        observers()
     }
     fun registration(){
-       val petName = binding.etName.text.toString()
-       if(petName.isEmpty() || petName.isBlank()){
-           binding.etName.error = REQUIRED
-       }else{
-           val pet = MainModel(petName)
-           viewModel.authentication(pet, binding.swSaveData.isChecked)
-           startActivity(Intent(this, PetActivity::class.java))
-       }
+        val petName = binding.etName.text.toString()
+        when{ petName.isEmpty() -> {
+            binding.etName.error = REQUIRED
+            }else -> {
+            val pet = MainModel(petName)
+            viewModel.authentication(pet, binding.swSaveData.isChecked)
+            startActivity(Intent(this, PetActivity::class.java))
+            }
+        }
    }
    fun observers(){
+       viewModel.response.observe(this){
+           if(it.accessAuth){
+               startActivity(Intent(this, PetActivity::class.java))
+           }
+       }
        viewModel.savedData.observe(this){
            binding.etName.setText(it.name)
        }
