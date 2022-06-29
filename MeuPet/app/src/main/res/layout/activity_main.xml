@@ -43,35 +43,37 @@
             android:layout_marginHorizontal="@dimen/size_60"
             android:layout_marginTop="@dimen/size_24"
             android:hint="@string/hint"
-            android:textAlignment="center"
-            android:textSize="@dimen/text_16"
             android:inputType="textCapWords"
             android:maxLines="1"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_16"
+            android:importantForAutofill="no"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvTitle"
-            tools:ignore="TouchTargetSizeCheck"/>
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck"/>
+
         <Button
             android:id="@+id/btSaveName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/save"
-            android:backgroundTint="@color/azul_claro"
             android:layout_marginHorizontal="@dimen/size_150"
-            android:layout_marginTop="@dimen/size_36"
+            android:layout_marginTop="@dimen/size_24"
+            android:backgroundTint="@color/azul_claro"
+            android:text="@string/save"
             android:textSize="@dimen/text_14"
-            app:layout_constraintTop_toBottomOf="@id/etName"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/swSaveData"/>
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/swSaveData"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/size_24"
+            android:minHeight="48dp"
             android:text="@string/save_switch"
             android:textColor="@color/cinza"
-            android:minHeight="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etName" />
     </androidx.constraintlayout.widget.ConstraintLayout>

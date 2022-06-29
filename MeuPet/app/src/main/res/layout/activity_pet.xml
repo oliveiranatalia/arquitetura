@@ -6,12 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/planet"
-    tools:context=".pet.PetActivity">
+    tools:context=".pet.view.PetActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/size_60"
+        android:layout_marginStart="@dimen/size_36"
         android:layout_marginTop="@dimen/size_100"
         android:fontFamily="cursive"
         android:text="@string/amei"
