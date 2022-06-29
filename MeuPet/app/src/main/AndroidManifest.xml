@@ -14,7 +14,10 @@
         android:theme="@style/Theme.MeuPet"
         tools:targetApi="31">
         <activity
-            android:name=".home.MainActivity"
+            android:name=".PetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.view.MainActivity"
             android:exported="false" />
         <activity
             android:name=".splash.SplashActivity"

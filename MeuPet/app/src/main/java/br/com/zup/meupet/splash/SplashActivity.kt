@@ -3,7 +3,7 @@ package br.com.zup.meupet.splash
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import br.com.zup.meupet.home.MainActivity
+import br.com.zup.meupet.home.view.MainActivity
 import br.com.zup.meupet.R
 import java.util.*
 
