@@ -14,7 +14,7 @@
         android:theme="@style/Theme.MeuPet"
         tools:targetApi="31">
         <activity
-            android:name=".PetActivity"
+            android:name=".pet.PetActivity"
             android:exported="false" />
         <activity
             android:name=".home.view.MainActivity"
