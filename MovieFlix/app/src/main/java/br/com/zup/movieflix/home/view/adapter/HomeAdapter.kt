@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.zup.movieflix.databinding.MovieItemBinding
 import br.com.zup.movieflix.home.model.Movie
 
-class HomeAdapter(private var movieList: MutableList<Movie>):
+class HomeAdapter(private var movieList: MutableList<Movie>,
+                  private  val clickMovie : (movie : Movie) -> Unit):
     RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
 
@@ -19,6 +20,9 @@ class HomeAdapter(private var movieList: MutableList<Movie>):
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val movie = movieList[position]
         holder.showMovieInfo(movie)
+        holder.binding.cvItemLista.setOnClickListener {
+            clickMovie(movie)
+        }
         holder.showMovieInfo(movie)
     }
 
@@ -32,9 +36,6 @@ class HomeAdapter(private var movieList: MutableList<Movie>):
             }
             notifyDataSetChanged()
         }
-
-
-
     class ViewHolder(val binding: MovieItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun showMovieInfo(movie: Movie){
             binding.tvMovieName.text = movie.title.toString()
