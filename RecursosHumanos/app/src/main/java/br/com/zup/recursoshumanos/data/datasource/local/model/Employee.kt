@@ -1,4 +1,4 @@
-package br.com.zup.recursoshumanos.ui.model
+package br.com.zup.recursoshumanos.data.datasource.local.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

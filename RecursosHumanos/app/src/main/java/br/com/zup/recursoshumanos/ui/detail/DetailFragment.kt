@@ -10,7 +10,7 @@ import br.com.zup.recursoshumanos.KEY
 import br.com.zup.recursoshumanos.SAL
 import br.com.zup.recursoshumanos.VAL
 import br.com.zup.recursoshumanos.databinding.FragmentDetailBinding
-import br.com.zup.recursoshumanos.ui.model.Employee
+import br.com.zup.recursoshumanos.data.datasource.local.model.Employee
 
 class DetailFragment : Fragment() {
     private lateinit var binding: FragmentDetailBinding
