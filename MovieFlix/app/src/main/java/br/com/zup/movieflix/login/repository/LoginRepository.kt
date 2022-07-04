@@ -10,7 +10,7 @@ class LoginRepository {
     fun authenticate (login : LoginModel, application: Application) :LoginModel{
         val pref = application.getSharedPreferences(PREFERENCE_REGISTER_KEY, Context.MODE_PRIVATE)
 
-        login.accessAuth = login.user == pref.getString(USER_NAME_REGISTER_KEY,"") &&
+        login.accessAuth = login.user == pref.getString(USER_EMAIL_REGISTER_KEY,"") &&
                 login.password == pref.getString(USER_PASSWORD_REGISTER_KEY,"")
         return login
     }

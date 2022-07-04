@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".home.MainActivity">
+    tools:context=".home.view.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -40,27 +40,42 @@
             android:id="@+id/etName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/text_60"
+            android:layout_marginHorizontal="@dimen/size_60"
             android:layout_marginTop="@dimen/size_24"
             android:hint="@string/hint"
+            android:inputType="textCapWords"
+            android:maxLines="1"
             android:textAlignment="center"
             android:textSize="@dimen/text_16"
+            android:importantForAutofill="no"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvTitle"
-            tools:ignore="TouchTargetSizeCheck"/>
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck"/>
+
         <Button
             android:id="@+id/btSaveName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/save"
-            android:backgroundTint="@color/azul_claro"
             android:layout_marginHorizontal="@dimen/size_150"
             android:layout_marginTop="@dimen/size_24"
+            android:backgroundTint="@color/azul_claro"
+            android:text="@string/save"
             android:textSize="@dimen/text_14"
-            app:layout_constraintTop_toBottomOf="@id/etName"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/swSaveData"/>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/swSaveData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/size_24"
+            android:minHeight="48dp"
+            android:text="@string/save_switch"
+            android:textColor="@color/cinza"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etName" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

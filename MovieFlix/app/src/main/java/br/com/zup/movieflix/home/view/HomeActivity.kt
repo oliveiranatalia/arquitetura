@@ -10,6 +10,7 @@ import br.com.zup.movieflix.databinding.ActivityHomeBinding
 import br.com.zup.movieflix.home.model.Movie
 import br.com.zup.movieflix.home.view.adapter.HomeAdapter
 import br.com.zup.movieflix.home.viewmodel.HomeViewModel
+import br.com.zup.movieflix.moviedetail.view.MovieDetailActivity
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
@@ -18,7 +19,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private val adapter: HomeAdapter by lazy {
-        HomeAdapter(arrayListOf())
+        HomeAdapter(arrayListOf(),this::goToMovieDetail)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,5 +41,10 @@ class HomeActivity : AppCompatActivity() {
         binding.rvMovieList.adapter = adapter
         binding.rvMovieList.layoutManager = LinearLayoutManager(this)
     }
-
+    private fun goToMovieDetail(movie: Movie) {
+        val intent = Intent(this, MovieDetailActivity::class.java).apply {
+            putExtra(KEY_MOVIE,movie)
+        }
+        startActivity(intent)
+    }
 }
