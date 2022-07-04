@@ -1,14 +1,17 @@
 package br.com.zup.recursoshumanos.data.datasource.local.model
 
 import android.os.Parcelable
+import androidx.room.ColumnInfo
+import androidx.room.Entity
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-class Employee(private var name:String,
-               private var hours:Int,
-               private var value:Double
-): Parcelable {
-    fun getNome() = this.name
-    fun getHoras() = this.hours
-    fun getValor() = this.value
-}
+@Entity(tableName = "employee")
+class Employee(
+    @ColumnInfo(name = "name")
+    private var name:String,
+    @ColumnInfo(name = "hours")
+    private var hours:Int,
+    @ColumnInfo(name = "value")
+    private var value:Double
+): Parcelable
