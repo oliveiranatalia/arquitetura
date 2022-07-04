@@ -14,7 +14,7 @@
         android:theme="@style/Theme.RecursosHumanos"
         tools:targetApi="31">
         <activity
-            android:name=".EmployeeListActivity"
+            android:name=".ui.employeelist.EmployeeListActivity"
             android:exported="false" />
         <activity
             android:name="br.com.zup.recursoshumanos.ui.home.MainActivity"
