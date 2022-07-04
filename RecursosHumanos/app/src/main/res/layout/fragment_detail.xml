@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="@dimen/marg_16"
+    android:layout_margin="@dimen/size_16"
     android:background="@color/cinza_claro"
-    tools:context=".fragments.InformacoesFragment">
+    tools:context=".ui.detail.DetailFragment">
 
     <TextView
         android:id="@+id/tvTituloSalario"
@@ -16,8 +16,8 @@
         android:text="@string/salar_rec"
         android:textStyle="bold"
         android:textSize="@dimen/text_16"
-        android:layout_marginTop="@dimen/marg_30"
-        android:layout_marginHorizontal="@dimen/marg_16"
+        android:layout_marginTop="@dimen/size_30"
+        android:layout_marginHorizontal="@dimen/size_16"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,12 +25,12 @@
 
     <ImageView
         android:id="@+id/ivIcone"
-        android:layout_width="@dimen/img_45"
-        android:layout_height="@dimen/img_45"
+        android:layout_width="@dimen/size_45"
+        android:layout_height="@dimen/size_45"
         android:src="@drawable/avatar"
         android:contentDescription="@string/desc_img"
-        android:layout_marginTop="@dimen/marg_30"
-        android:layout_marginStart="@dimen/marg_16"
+        android:layout_marginTop="@dimen/size_30"
+        android:layout_marginStart="@dimen/size_16"
         app:layout_constraintTop_toBottomOf="@id/tvTituloSalario"
         app:layout_constraintStart_toStartOf="parent"/>
     <TextView
@@ -39,8 +39,8 @@
         android:layout_height="wrap_content"
         android:text="@string/hint_nome"
         android:textSize="@dimen/text_12"
-        android:layout_marginTop="@dimen/marg_50"
-        android:layout_marginStart="@dimen/marg_16"
+        android:layout_marginTop="@dimen/size_50"
+        android:layout_marginStart="@dimen/size_16"
         app:layout_constraintStart_toEndOf="@+id/ivIcone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTituloSalario"/>
@@ -50,8 +50,8 @@
         android:layout_height="wrap_content"
         android:text="@string/horas_trab"
         android:textSize="@dimen/text_12"
-        android:layout_marginTop="@dimen/marg_30"
-        android:layout_marginHorizontal="@dimen/marg_16"
+        android:layout_marginTop="@dimen/size_30"
+        android:layout_marginHorizontal="@dimen/size_16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNomeFunc"/>
@@ -61,8 +61,8 @@
         android:layout_height="wrap_content"
         android:text="@string/valor_hr"
         android:textSize="@dimen/text_12"
-        android:layout_marginTop="@dimen/marg_16"
-        android:layout_marginHorizontal="@dimen/marg_16"
+        android:layout_marginTop="@dimen/size_16"
+        android:layout_marginHorizontal="@dimen/size_16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvHorasFunc"/>
@@ -73,9 +73,9 @@
         android:text="@string/salar_rec"
         android:textStyle="bold"
         android:textSize="@dimen/text_12"
-        android:layout_marginTop="@dimen/marg_16"
+        android:layout_marginTop="@dimen/size_16"
         android:layout_marginBottom="100dp"
-        android:layout_marginHorizontal="@dimen/marg_16"
+        android:layout_marginHorizontal="@dimen/size_16"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvValorHora"
         app:layout_constraintStart_toStartOf="parent"

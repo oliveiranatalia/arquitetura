@@ -1,4 +1,4 @@
-package br.com.zup.recursoshumanos.home
+package br.com.zup.recursoshumanos.ui.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

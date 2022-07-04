@@ -1,4 +1,4 @@
-package br.com.zup.recursoshumanos.fragments
+package br.com.zup.recursoshumanos.ui.detail
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,18 +9,18 @@ import br.com.zup.recursoshumanos.HORA
 import br.com.zup.recursoshumanos.KEY
 import br.com.zup.recursoshumanos.SAL
 import br.com.zup.recursoshumanos.VAL
-import br.com.zup.recursoshumanos.databinding.FragmentInformacoesBinding
-import br.com.zup.recursoshumanos.model.Funcionario
+import br.com.zup.recursoshumanos.databinding.FragmentDetailBinding
+import br.com.zup.recursoshumanos.ui.model.Employee
 
-class InformacoesFragment : Fragment() {
-    private lateinit var binding: FragmentInformacoesBinding
-    private lateinit var objeto:Funcionario
+class DetailFragment : Fragment() {
+    private lateinit var binding: FragmentDetailBinding
+    private lateinit var objeto:Employee
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentInformacoesBinding.inflate(inflater,container,false)
+        binding = FragmentDetailBinding.inflate(inflater,container,false)
         return binding.root
     }
 
@@ -29,7 +29,7 @@ class InformacoesFragment : Fragment() {
         showInfo()
     }
     private fun getInfo(){
-        val func = arguments?.getParcelable<Funcionario>(KEY)
+        val func = arguments?.getParcelable<Employee>(KEY)
         func?.let {objeto = it}
     }
     private fun calculo(): Double {

@@ -1,4 +1,4 @@
-package br.com.zup.recursoshumanos.fragments
+package br.com.zup.recursoshumanos.ui.register
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,9 +11,9 @@ import br.com.zup.recursoshumanos.ERROR
 import br.com.zup.recursoshumanos.KEY
 import br.com.zup.recursoshumanos.R
 import br.com.zup.recursoshumanos.databinding.FragmentCadastroBinding
-import br.com.zup.recursoshumanos.model.Funcionario
+import br.com.zup.recursoshumanos.ui.model.Employee
 
-class CadastroFragment : Fragment() {
+class RegisterFragment : Fragment() {
     private lateinit var binding:FragmentCadastroBinding
     private lateinit var nome:String
     private lateinit var horas:String
@@ -28,14 +28,14 @@ class CadastroFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.botao.setOnClickListener{
+        binding.bvCalculate.setOnClickListener{
             sendInfo()
         }
     }
     private fun getInfo(){
-        this.nome = binding.etNome.text.toString()
-        this.horas = binding.etHoras.text.toString()
-        this.valor = binding.etValor.text.toString()
+        this.nome = binding.etEmployeeName.text.toString()
+        this.horas = binding.etHourWorked.text.toString()
+        this.valor = binding.etHourlyRate.text.toString()
     }
     private fun sendInfo(){
         val func = checkInfo()
@@ -44,21 +44,21 @@ class CadastroFragment : Fragment() {
             NavHostFragment.findNavController(this).navigate(R.id.action_cadastroFragment_to_informacoesFragment,bundle)
         }
     }
-    private fun checkInfo():Funcionario?{
+    private fun checkInfo():Employee?{
         getInfo()
         return if(nome.isNotEmpty() || nome.isNotBlank() && horas.isNotEmpty() || horas.isNotBlank() && valor.isNotEmpty() || valor.isNotBlank()) {
             clear()
-            Funcionario(nome, horas.toInt(), valor.toDouble())
+            Employee(nome, horas.toInt(), valor.toDouble())
         }else{
-            binding.etNome.error = ERROR
-            binding.etHoras.error = ERROR
-            binding.etValor.error = ERROR
+            binding.etEmployeeName.error = ERROR
+            binding.etHourWorked.error = ERROR
+            binding.etHourlyRate.error = ERROR
             null
         }
     }
     private fun clear(){
-        binding.etNome.text.clear()
-        binding.etValor.text.clear()
-        binding.etHoras.text.clear()
+        binding.etEmployeeName.text.clear()
+        binding.etHourWorked.text.clear()
+        binding.etHourlyRate.text.clear()
     }
 }

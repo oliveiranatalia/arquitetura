@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".home.MainActivity">
+    tools:context=".ui.home.MainActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -18,15 +18,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-
     <TextView
         android:id="@+id/tvAppDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/app_desc"
         android:textSize="@dimen/text_12"
-        android:layout_marginTop="@dimen/marg_30"
-        android:layout_marginHorizontal="@dimen/marg_16"
+        android:layout_marginTop="@dimen/size_30"
+        android:layout_marginHorizontal="@dimen/size_16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
@@ -37,8 +36,8 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marg_40"
-        android:layout_marginHorizontal="@dimen/marg_16"
+        android:layout_marginTop="@dimen/size_40"
+        android:layout_marginHorizontal="@dimen/size_16"
         app:defaultNavHost="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

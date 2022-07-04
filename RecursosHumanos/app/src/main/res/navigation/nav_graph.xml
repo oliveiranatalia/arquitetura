@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/cadastroFragment"
-        android:name="br.com.zup.recursoshumanos.fragments.CadastroFragment"
+        android:name="br.com.zup.recursoshumanos.ui.register.RegisterFragment"
         android:label="Recursos Humanos"
         tools:layout="@layout/fragment_cadastro" >
         <action
@@ -16,9 +16,9 @@
     </fragment>
     <fragment
         android:id="@+id/informacoesFragment"
-        android:name="br.com.zup.recursoshumanos.fragments.InformacoesFragment"
+        android:name="br.com.zup.recursoshumanos.ui.detail.DetailFragment"
         android:label="Recursos Humanos"
-        tools:layout="@layout/fragment_informacoes" >
+        tools:layout="@layout/fragment_detail" >
         <action
             android:id="@+id/action_informacoesFragment_to_cadastroFragment"
             app:destination="@id/cadastroFragment" />
