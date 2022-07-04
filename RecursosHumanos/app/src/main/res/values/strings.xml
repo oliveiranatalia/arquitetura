@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Recursos Humanos</string>
+    <string name="app_desc">Esse é o nosso aplicativo de cadastro de funcionarios, aqui vamos cadastrar as informações e calcular o salário do funcionário</string>
+    <string name="cadastro">Cadastro de informações</string>
+    <string name="hint_nome">Nome e sobrenome</string>
+    <string name="horas_trab">Horas trabalhadas</string>
+    <string name="valor_hr">Valor por hora</string>
+    <string name="calcular">calcular salario</string>
+    <string name="salar_rec">Salário a receber</string>
+    <string name="desc_img">Vetor de pessoa na cor cinza</string>
+</resources>
