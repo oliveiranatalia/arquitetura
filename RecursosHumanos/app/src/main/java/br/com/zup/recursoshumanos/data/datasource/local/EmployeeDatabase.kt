@@ -8,14 +8,14 @@ import br.com.zup.recursoshumanos.data.datasource.local.dao.EmployeeDAO
 import br.com.zup.recursoshumanos.domain.model.Employee
 
 @Database(entities = [Employee::class], version = 1)
-abstract class MovieDatabase : RoomDatabase() {
-    abstract fun movieDao(): EmployeeDAO
+abstract class EmployeeDatabase : RoomDatabase() {
+    abstract fun employeeDao(): EmployeeDAO
 
     companion object {
         @Volatile
-        private var INSTANCE: MovieDatabase? = null
+        private var INSTANCE: EmployeeDatabase? = null
 
-        fun getDatabase(context: Context): MovieDatabase {
+        fun getDatabase(context: Context): EmployeeDatabase {
             val tempInstance = INSTANCE
             if (tempInstance != null) {
                 return tempInstance
@@ -23,7 +23,7 @@ abstract class MovieDatabase : RoomDatabase() {
             synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
-                    MovieDatabase::class.java,
+                    EmployeeDatabase::class.java,
                     "filme_database"
                 ).build()
                 INSTANCE = instance
