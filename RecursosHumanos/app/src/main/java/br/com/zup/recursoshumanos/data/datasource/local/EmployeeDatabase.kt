@@ -9,6 +9,7 @@ import br.com.zup.recursoshumanos.domain.model.Employee
 
 @Database(entities = [Employee::class], version = 1)
 abstract class EmployeeDatabase : RoomDatabase() {
+
     abstract fun employeeDao(): EmployeeDAO
 
     companion object {
@@ -24,7 +25,7 @@ abstract class EmployeeDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     EmployeeDatabase::class.java,
-                    "filme_database"
+                    "employee_database"
                 ).build()
                 INSTANCE = instance
                 return instance

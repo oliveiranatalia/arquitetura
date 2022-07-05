@@ -10,7 +10,7 @@ import br.com.zup.recursoshumanos.domain.model.Employee
 interface EmployeeDAO {
 
     @Query("SELECT * FROM employee ORDER BY name ASC")
-    fun getEmployeeList():List<Employee>
+    fun getList():List<Employee>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertEmployee(employee: Employee)
