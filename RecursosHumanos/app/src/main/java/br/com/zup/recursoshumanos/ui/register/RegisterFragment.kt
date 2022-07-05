@@ -11,7 +11,7 @@ import br.com.zup.recursoshumanos.ERROR
 import br.com.zup.recursoshumanos.KEY
 import br.com.zup.recursoshumanos.R
 import br.com.zup.recursoshumanos.databinding.FragmentCadastroBinding
-import br.com.zup.recursoshumanos.data.datasource.local.model.Employee
+import br.com.zup.recursoshumanos.domain.model.Employee
 
 class RegisterFragment : Fragment() {
     private lateinit var binding:FragmentCadastroBinding

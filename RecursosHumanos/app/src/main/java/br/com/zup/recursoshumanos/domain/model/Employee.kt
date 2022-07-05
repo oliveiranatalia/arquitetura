@@ -1,4 +1,4 @@
-package br.com.zup.recursoshumanos.data.datasource.local.model
+package br.com.zup.recursoshumanos.domain.model
 
 import android.os.Parcelable
 import androidx.room.ColumnInfo

@@ -1,15 +1,17 @@
 package br.com.zup.recursoshumanos.data.datasource.local.dao
 
 import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import br.com.zup.recursoshumanos.data.datasource.local.model.Employee
+import br.com.zup.recursoshumanos.domain.model.Employee
 
 @Dao
 interface EmployeeDAO {
+
     @Query("SELECT * FROM employee ORDER BY name ASC")
-    fun getAllEmployees():List<Employee>
+    fun getEmployeeList():List<Employee>
 
-    @Query("SELECT * FROM employee WHERE name= :name")
-    fun getEmployeeName(name:String):Employee
-
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertEmployee(employee: Employee)
 }
