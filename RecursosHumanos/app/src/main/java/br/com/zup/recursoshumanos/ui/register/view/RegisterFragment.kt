@@ -6,21 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import br.com.zup.recursoshumanos.*
 import br.com.zup.recursoshumanos.databinding.FragmentRegisterBinding
-import br.com.zup.recursoshumanos.domain.model.Employee
 import br.com.zup.recursoshumanos.ui.register.viewmodel.RegisterViewModel
+import br.com.zup.recursoshumanos.ui.viewstate.ViewState
 
 class RegisterFragment : Fragment() {
     private lateinit var binding:FragmentRegisterBinding
     private val viewModel: RegisterViewModel by lazy {ViewModelProvider(this)[RegisterViewModel::class.java]}
-    private lateinit var name: String
-    private lateinit var hours:String
-    private lateinit var value:String
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,22 +37,25 @@ class RegisterFragment : Fragment() {
         setHasOptionsMenu(true)
     }
     private fun insertEmployee() {
-        getData()
-        if(name.isNotEmpty() && hours.isNotEmpty() && value.isNotEmpty()) {
-            Toast.makeText(context, REGISTRED,Toast.LENGTH_LONG).show()
-            viewModel.employeeVerification(name, hours, value)
-            clear()
-        }else{
-            binding.etEmployeeName.error = REQUIRED
-            binding.etHourWorked.error = REQUIRED
-            binding.etHourlyRate.error = REQUIRED
-        }
+        viewModel.employeeVerification(
+            binding.etEmployeeName.text.toString(),
+            binding.etHourWorked.text.toString(),
+            binding.etHourlyRate.text.toString()
+        )
+        observer()
     }
 
-    private fun getData(){
-        this.name = binding.etEmployeeName.text.toString()
-        this.hours = binding.etHourWorked.text.toString()
-        this.value = binding.etHourlyRate.text.toString()
+    private fun observer(){
+        viewModel.addEmployeeState.observe(this.viewLifecycleOwner){
+            if(it is ViewState.Success) {
+                Toast.makeText(context, REGISTRED, Toast.LENGTH_LONG).show()
+                clear()
+            }else{
+                binding.etEmployeeName.error = REQUIRED
+                binding.etHourWorked.error = REQUIRED
+                binding.etHourlyRate.error = REQUIRED
+            }
+        }
     }
     private fun clear(){
         binding.etEmployeeName.text.clear()

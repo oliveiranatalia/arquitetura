@@ -16,7 +16,6 @@ class DetailFragment : Fragment() {
     private lateinit var salary:String
     private lateinit var name:String
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,7 +23,6 @@ class DetailFragment : Fragment() {
         binding = FragmentDetailBinding.inflate(inflater,container,false)
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         showInfo()

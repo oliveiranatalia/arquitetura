@@ -16,6 +16,7 @@ import br.com.zup.recursoshumanos.databinding.FragmentEmployeeListBinding
 import br.com.zup.recursoshumanos.domain.model.Employee
 import br.com.zup.recursoshumanos.ui.employeelist.adapter.EmployeeAdapter
 import br.com.zup.recursoshumanos.ui.employeelist.viewmodel.EmployeeListViewModel
+import br.com.zup.recursoshumanos.ui.viewstate.ViewState
 
 class EmployeeListFragment : Fragment() {
     private lateinit var binding: FragmentEmployeeListBinding
@@ -34,17 +35,17 @@ class EmployeeListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true)
         showRecyclerView()
-        getList()
+        observer()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel.getList()
     }
-    private fun getList(){
+    private fun observer(){
         viewModel.employeeList.observe(this.viewLifecycleOwner){
-            if(it.isNotEmpty()){
-                adapter.updateList(it)
+            if(it is ViewState.Success){
+                adapter.updateList(it.data)
             }else{
                 binding.tvListTitle.text = ERROR_LIST
             }
