@@ -8,7 +8,7 @@
         android:id="@+id/registerFragment"
         android:name="br.com.zup.recursoshumanos.ui.register.view.RegisterFragment"
         android:label="Recursos Humanos"
-        tools:layout="@layout/fragment_cadastro" >
+        tools:layout="@layout/fragment_register" >
         <action
             android:id="@+id/action_registerFragment_to_employeeListFragment"
             app:destination="@id/employeeListFragment" />

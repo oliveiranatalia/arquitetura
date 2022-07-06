@@ -9,11 +9,11 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.NavHostFragment
 import br.com.zup.recursoshumanos.*
-import br.com.zup.recursoshumanos.databinding.FragmentCadastroBinding
+import br.com.zup.recursoshumanos.databinding.FragmentRegisterBinding
 import br.com.zup.recursoshumanos.domain.model.Employee
 
 class RegisterFragment : Fragment() {
-    private lateinit var binding:FragmentCadastroBinding
+    private lateinit var binding:FragmentRegisterBinding
     private lateinit var name: String
     private lateinit var hours:String
     private lateinit var value:String
@@ -23,7 +23,7 @@ class RegisterFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentCadastroBinding.inflate(inflater,container,false)
+        binding = FragmentRegisterBinding.inflate(inflater,container,false)
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -38,6 +38,7 @@ class RegisterFragment : Fragment() {
         binding.bvEmployeeList.setOnClickListener{
             goToList(list)
         }
+        setHasOptionsMenu(true)
     }
     private fun listRecover(){
         val employeeList = arguments?.getParcelableArrayList<Employee>(EMPLOYEE)

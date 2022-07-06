@@ -28,6 +28,7 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         showInfo()
+        setHasOptionsMenu(true)
     }
     private fun getData(){
         val employee = arguments?.getParcelable<Employee>(EMPLOYEE)
