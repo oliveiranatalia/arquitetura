@@ -8,7 +8,7 @@ import br.com.zup.recursoshumanos.domain.model.Employee
 
 class EmployeeAdapter(
     private var list:MutableList<Employee>,
-    private val click:(emplote:Employee) -> Unit
+    private val click:(employee:Employee) -> Unit
 ): RecyclerView.Adapter<EmployeeAdapter.ViewHolder>() {
 
     class ViewHolder(val binding: EmployeeItemBinding):RecyclerView.ViewHolder(binding.root){
@@ -27,9 +27,9 @@ class EmployeeAdapter(
             click(employee)
         }
     }
-    fun updateList(newList:ArrayList<Employee>){
-        if(list.size ==0 || list == newList){
-            list = newList
+    fun updateList(newList:List<Employee>){
+        if(list.size == 0 || list == newList){
+            list = newList as MutableList<Employee>
         }else{
             list.addAll(newList)
         }

@@ -5,9 +5,9 @@ import br.com.zup.recursoshumanos.domain.model.Employee
 
 class EmployeeRepository(private val employeeDAO: EmployeeDAO) {
 
-    suspend fun getEmployeeList():List<Employee> = employeeDAO.getList()
+    fun getEmployeeList():List<Employee> = employeeDAO.getList()
 
-    suspend fun insertEmployee(employee: Employee){
+    fun insertEmployee(employee: Employee){
         employeeDAO.insertEmployee(employee)
     }
 }
