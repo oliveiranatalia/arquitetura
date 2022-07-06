@@ -12,8 +12,10 @@ class Employee(
     @PrimaryKey(autoGenerate = false)
     @ColumnInfo(name = "name")
     var name:String,
+
     @ColumnInfo(name = "hours")
     var hours:Int,
+
     @ColumnInfo(name = "value")
     var value:Double
 ): Parcelable

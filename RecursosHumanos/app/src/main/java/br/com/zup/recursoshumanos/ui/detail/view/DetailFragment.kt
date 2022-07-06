@@ -44,7 +44,7 @@ class DetailFragment : Fragment() {
         getData()
         binding.tvNomeFunc.text = this.name
         binding.tvHorasFunc.text = "$HOUR ${this.hours}h"
-        binding.tvValorHora.text = "$VAL ${this.value}"
-        binding.tvResultado.text = "$SAL ${this.salary}"
+        binding.tvValorHora.text = "$VALUE ${this.value}"
+        binding.tvResultado.text = "$SALARY ${this.salary}"
     }
 }
