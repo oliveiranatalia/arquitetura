@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/registerFragment">
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="br.com.zup.recursoshumanos.ui.register.view.RegisterFragment"
+        android:label="Recursos Humanos"
+        tools:layout="@layout/fragment_cadastro" >
+        <action
+            android:id="@+id/action_registerFragment_to_employeeListFragment"
+            app:destination="@id/employeeListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/employeeListFragment"
+        android:name="br.com.zup.recursoshumanos.ui.employeelist.view.EmployeeListFragment"
+        android:label="Recursos Humanos"
+        tools:layout="@layout/fragment_employee_list" >
+        <action
+            android:id="@+id/action_employeeListFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_employeeListFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="br.com.zup.recursoshumanos.ui.detail.view.DetailFragment"
+        android:label="Recursos Humanos"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_employeeListFragment"
+            app:destination="@id/employeeListFragment" />
+    </fragment>
+</navigation>

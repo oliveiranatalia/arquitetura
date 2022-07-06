@@ -1,18 +1,16 @@
 package br.com.zup.recursoshumanos.ui.register.view
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.NavHostFragment
 import br.com.zup.recursoshumanos.*
 import br.com.zup.recursoshumanos.databinding.FragmentCadastroBinding
 import br.com.zup.recursoshumanos.domain.model.Employee
-import br.com.zup.recursoshumanos.ui.employeelist.view.EmployeeListActivity
-import br.com.zup.recursoshumanos.ui.register.viewmodel.RegisterViewModel
 
 class RegisterFragment : Fragment() {
     private lateinit var binding:FragmentCadastroBinding
@@ -20,8 +18,6 @@ class RegisterFragment : Fragment() {
     private lateinit var hours:String
     private lateinit var value:String
     private var list = arrayListOf<Employee>()
-    private val viewModel: RegisterViewModel by lazy {
-        ViewModelProvider(this)[RegisterViewModel::class.java]}
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,13 +29,19 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        listRecover()
+
         binding.bvCalculate.setOnClickListener{
             insertEmployee()
         }
 
         binding.bvEmployeeList.setOnClickListener{
-            goToList(this.list)
+            goToList(list)
         }
+    }
+    private fun listRecover(){
+        val employeeList = arguments?.getParcelableArrayList<Employee>(EMPLOYEE)
+        employeeList?.let { list = it }
     }
     private fun insertEmployee() {
         val employee = checkInfo()
@@ -53,14 +55,14 @@ class RegisterFragment : Fragment() {
         this.hours = binding.etHourWorked.text.toString()
         this.value = binding.etHourlyRate.text.toString()
 
-        return if(name.isNotEmpty() || name.isNotBlank() && hours.isNotEmpty() || hours.isNotBlank() && value.isNotEmpty() || value.isNotBlank()) {
+        if(name.isNotEmpty() && hours.isNotEmpty() && value.isNotEmpty()) {
             clear()
-            Employee(name, hours.toInt(), value.toDouble())
+            return Employee(name, hours.toInt(), value.toDouble())
         }else{
             binding.etEmployeeName.error = REQUIRED
             binding.etHourWorked.error = REQUIRED
             binding.etHourlyRate.error = REQUIRED
-            null
+            return null
         }
     }
     private fun clear(){
@@ -69,10 +71,7 @@ class RegisterFragment : Fragment() {
         binding.etHourlyRate.text.clear()
     }
     private fun goToList(list:ArrayList<Employee>){
-        val intent = Intent(context, EmployeeListActivity::class.java).apply{
-            putParcelableArrayListExtra(EMPLOYEE, list)
-        }
-        startActivity(intent)
-        clear()
+        val bundle = bundleOf(EMPLOYEE_LIST to list)
+        NavHostFragment.findNavController(this).navigate(R.id.action_registerFragment_to_employeeListFragment,bundle)
     }
 }

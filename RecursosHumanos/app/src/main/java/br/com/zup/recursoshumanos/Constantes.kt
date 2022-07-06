@@ -1,6 +1,7 @@
 package br.com.zup.recursoshumanos
 
 const val EMPLOYEE = "funcionario"
+const val EMPLOYEE_LIST = "lista de funcionario"
 const val REQUIRED = "Campo obrigatório!"
 const val HOUR = "Horas trabalhadas: "
 const val VAL = "Valor por hora: R$ "
