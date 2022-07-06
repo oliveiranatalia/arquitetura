@@ -18,28 +18,26 @@
             android:text="@string/list_title"
             android:textSize="@dimen/text_16"
             android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/scrollview"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <ScrollView
             android:id="@+id/scrollview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/size_20"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/size_30"
+            android:layout_marginBottom="@dimen/size_5"
             android:scrollbarSize="@dimen/size_16"
+            app:layout_constraintTop_toBottomOf="@id/tvListTitle"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvListTitle"
-            app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintStart_toStartOf="parent">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvEmployeeList"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 tools:listitem="@layout/employee_item" />
 
         </ScrollView>
