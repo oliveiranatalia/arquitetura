@@ -5,4 +5,6 @@
     <string name="action_register">criar conta</string>
     <string name="sign_in">entrar</string>
     <string name="register">registrar</string>
+    <string name="welcome">\"Olá, \"</string>
+    <string name="logout">Sair</string>
 </resources>

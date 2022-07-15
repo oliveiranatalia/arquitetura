@@ -4,10 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/natalia.oliveira/Desktop/arquitetura/LoginApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.11" />
+        <entry key="..\:/Users/natalia.oliveira/Desktop/arquitetura/LoginApp/app/src/main/res/drawable/ic_logout.xml" value="0.1" />
         <entry key="..\:/Users/natalia.oliveira/Desktop/arquitetura/LoginApp/app/src/main/res/layout/activity_login.xml" value="0.1796875" />
         <entry key="..\:/Users/natalia.oliveira/Desktop/arquitetura/LoginApp/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
         <entry key="..\:/Users/natalia.oliveira/Desktop/arquitetura/LoginApp/app/src/main/res/layout/activity_register.xml" value="0.1796875" />
         <entry key="..\:/Users/natalia.oliveira/Desktop/arquitetura/LoginApp/app/src/main/res/layout/activity_splash.xml" value="0.1796875" />
+        <entry key="..\:/Users/natalia.oliveira/Desktop/arquitetura/LoginApp/app/src/main/res/menu/menu.xml" value="0.17864583333333334" />
       </map>
     </option>
   </component>
