@@ -27,6 +27,7 @@ class RegisterViewModel : ViewModel(){
     private fun register(user:User){
         try {
             repository.register(user.email, user.password)
+            _register.value = user
         }catch(e:Exception){
            _error.value = ERROR
         }

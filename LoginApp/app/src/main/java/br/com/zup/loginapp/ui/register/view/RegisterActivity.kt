@@ -32,7 +32,7 @@ class RegisterActivity : AppCompatActivity() {
     }
     private fun getData(): User {
         val user = User(
-            binding.etEmail.toString(),binding.etPassword.toString()
+            binding.etEmail.text.toString(),binding.etPassword.text.toString()
         )
         return user
     }
