@@ -7,4 +7,7 @@
     <string name="register">registrar</string>
     <string name="welcome">\"Olá, \"</string>
     <string name="logout">Sair</string>
+    <string name="hint_editText">Como você está se sentindo hoje?</string>
+    <string name="user_email">User email</string>
+    <string name="send">enviar</string>
 </resources>

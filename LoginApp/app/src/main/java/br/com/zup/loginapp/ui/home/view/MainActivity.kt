@@ -22,15 +22,31 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         showUserEmail()
 
         supportActionBar?.hide()
+
+        binding.tvSendText.setOnClickListener{
+            sendText()
+        }
     }
     private fun showUserEmail(){
         val email = viewModel.getEmail()
         val text = "Olá, "
         binding.tvUserEmail.text = text + email
     }
+    private fun showText(text:String){
+        binding.tvText.text = text
+
+    }
+    private fun sendText(){
+        val text = binding.edUserText.text.toString()
+        viewModel.sendUserText(text)
+        showText(text)
+        binding.edUserText.text.clear()
+    }
+
     private fun goToLogin(){
         startActivity(Intent(this, LoginActivity::class.java))
     }

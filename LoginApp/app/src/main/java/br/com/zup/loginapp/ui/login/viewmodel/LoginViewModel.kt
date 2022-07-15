@@ -26,8 +26,12 @@ class LoginViewModel: ViewModel() {
     }
     fun login(user:User){
         try{
-            repository.login(user.email,user.password)
-            _login.value = user
+            repository.login(user.email,user.password
+            ).addOnSuccessListener {
+                _login.value = user
+            }.addOnFailureListener {
+                _error.value = ERROR + it.message
+            }
         }catch(e:Exception){
             _error.value = ERROR
         }
