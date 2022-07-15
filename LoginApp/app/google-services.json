@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "268915304675",
+    "project_id": "loginapp-e0c2a",
+    "storage_bucket": "loginapp-e0c2a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268915304675:android:a8c70c400b764d45defdd6",
+        "android_client_info": {
+          "package_name": "br.com.zup.loginapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "268915304675-td5dkorn5f87kc604m2bffp03d9hh8cv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfwWND2eh-36V4cQnJ6gCyIc5IPUkjZYM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "268915304675-td5dkorn5f87kc604m2bffp03d9hh8cv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

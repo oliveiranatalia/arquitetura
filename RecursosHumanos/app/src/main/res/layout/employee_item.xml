@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvItem"
+    android:layout_margin="@dimen/size_5">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivPhotoItem"
+            android:layout_width="@dimen/size_50"
+            android:layout_height="@dimen/size_50"
+            android:src="@drawable/avatar"
+            android:layout_margin="@dimen/size_16"
+            android:contentDescription="@string/desc_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+        <TextView
+            android:id="@+id/tvNameItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hint_name"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_14"
+            android:layout_margin="@dimen/size_16"
+            android:layout_marginTop="@dimen/size_20"
+            android:layout_marginStart="@dimen/size_16"
+            app:layout_constraintStart_toEndOf="@id/ivPhotoItem"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

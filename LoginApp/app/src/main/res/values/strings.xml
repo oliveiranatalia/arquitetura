@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">LoginApp</string>
+    <string name="hint_email">Insira o e-mail</string>
+    <string name="hint_password">Insira a senha</string>
+    <string name="action_register">criar conta</string>
+    <string name="sign_in">entrar</string>
+    <string name="register">registrar</string>
+    <string name="welcome">\"Olá, \"</string>
+    <string name="logout">Sair</string>
+</resources>

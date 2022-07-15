@@ -3,24 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/cadastroFragment">
-
+    app:startDestination="@id/registerFragment">
     <fragment
-        android:id="@+id/cadastroFragment"
-        android:name="br.com.zup.recursoshumanos.fragments.CadastroFragment"
+        android:id="@+id/registerFragment"
+        android:name="br.com.zup.recursoshumanos.ui.register.view.RegisterFragment"
         android:label="Recursos Humanos"
-        tools:layout="@layout/fragment_cadastro" >
+        tools:layout="@layout/fragment_register" >
         <action
-            android:id="@+id/action_cadastroFragment_to_informacoesFragment"
-            app:destination="@id/informacoesFragment" />
+            android:id="@+id/action_registerFragment_to_employeeListFragment"
+            app:destination="@id/employeeListFragment" />
     </fragment>
     <fragment
-        android:id="@+id/informacoesFragment"
-        android:name="br.com.zup.recursoshumanos.fragments.InformacoesFragment"
+        android:id="@+id/employeeListFragment"
+        android:name="br.com.zup.recursoshumanos.ui.employeelist.view.EmployeeListFragment"
         android:label="Recursos Humanos"
-        tools:layout="@layout/fragment_informacoes" >
+        tools:layout="@layout/fragment_employee_list" >
         <action
-            android:id="@+id/action_informacoesFragment_to_cadastroFragment"
-            app:destination="@id/cadastroFragment" />
+            android:id="@+id/action_employeeListFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_employeeListFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="br.com.zup.recursoshumanos.ui.detail.view.DetailFragment"
+        android:label="Recursos Humanos"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_employeeListFragment"
+            app:destination="@id/employeeListFragment" />
     </fragment>
 </navigation>
