@@ -28,7 +28,8 @@ class MainActivity : AppCompatActivity() {
     }
     private fun showUserEmail(){
         val email = viewModel.getEmail()
-        binding.tvUserEmail.text = "Olá, $email"
+        val text = "Olá, "
+        binding.tvUserEmail.text = text + email
     }
     private fun goToLogin(){
         startActivity(Intent(this, LoginActivity::class.java))
