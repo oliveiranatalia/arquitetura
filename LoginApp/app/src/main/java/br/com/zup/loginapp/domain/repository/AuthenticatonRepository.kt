@@ -24,7 +24,7 @@ class AuthenticatonRepository {
         return auth.currentUser?.updateProfile(profile)
     }
 
-    fun logoutOut() {
+    fun logout() {
         auth.signOut()
     }
 }
