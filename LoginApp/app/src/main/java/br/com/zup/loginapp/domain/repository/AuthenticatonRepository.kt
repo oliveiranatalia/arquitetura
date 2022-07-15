@@ -18,12 +18,6 @@ class AuthenticatonRepository {
     fun login(email: String, password: String) : Task<AuthResult> {
         return auth.signInWithEmailAndPassword(email, password)
     }
-
-    fun updateProfile(name: String) : Task<Void>? {
-        val profile = UserProfileChangeRequest.Builder().setDisplayName(name).build()
-        return auth.currentUser?.updateProfile(profile)
-    }
-
     fun logout() {
         auth.signOut()
     }
