@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.zup.loginapp.databinding.ActivitySplashBinding
 import br.com.zup.loginapp.ui.home.view.MainActivity
+import br.com.zup.loginapp.ui.login.view.LoginActivity
 import java.util.*
 
 class SplashActivity : AppCompatActivity() {
@@ -26,7 +27,7 @@ class SplashActivity : AppCompatActivity() {
     }
     private fun jump(){
         timer.cancel()
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this, LoginActivity::class.java))
         this.finish()
     }
 }
