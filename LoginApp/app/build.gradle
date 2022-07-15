@@ -53,4 +53,7 @@ dependencies {
     //network connection
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
     implementation "com.squareup.okhttp3:logging-interceptor:4.2.1"
+
+    //gif
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.24'
 }
