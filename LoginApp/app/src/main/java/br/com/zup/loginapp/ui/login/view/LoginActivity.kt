@@ -22,6 +22,9 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        observer()
+
+        supportActionBar?.hide()
 
         binding.tvRegister.setOnClickListener{
             goToRegister()
